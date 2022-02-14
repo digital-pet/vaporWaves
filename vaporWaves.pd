@@ -1,0 +1,897 @@
+#N canvas 451 192 656 743 10;
+#X obj -1 -1 cnv 15 550 600 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 28 247 cnv 15 350 450 empty empty empty 20 12 0 14 #202020 #404040
+0;
+#X obj 248 323 cnv 15 120 350 empty empty empty 20 12 0 14 #944800
+#404040 0;
+#X obj 36 323 cnv 15 332 55 empty empty empty 20 12 0 14 #0c4044 #404040
+0;
+#X obj 263 653 comment 425 11 helvetica empty 0 0 0 0 0 255 255 255
+0 0 master;
+#X obj 318 653 comment 53 11 helvetica empty 0 0 0 0 0 255 255 255
+0 0 monitor;
+#X obj 4 0 comment 425 66 helvetica empty 0 255 0 255 0 255 255 255
+0 0 vapor;
+#X obj 7 4 comment 425 66 helvetica empty 0 0 255 255 0 255 255 255
+0 0 vapor;
+#X obj 5 2 comment 425 66 helvetica empty 0 255 255 255 0 255 255 255
+0 0 vapor;
+#X obj 31 58 comment 425 66 helvetica empty 0 255 0 255 0 255 255 255
+0 0 WAVES;
+#X obj 35 62 comment 425 66 helvetica empty 0 0 255 255 0 255 255 255
+0 0 WAVES;
+#X obj 33 59 comment 363 66 helvetica empty 0 255 255 255 0 255 255
+255 0 0 WAVES;
+#N canvas 33 383 901 714 a 1;
+#N canvas 163 378 462 467 Init 0;
+#X obj -5 88 loadbang;
+#X obj -23 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 250 249 s ST2_fader_out;
+#X obj 250 269 s master_fader_out;
+#X obj 250 229 s ST1_fader_out;
+#X obj 250 289 s cue_fader_out;
+#X obj 250 210 s ch2_fader_out;
+#X obj 250 190 s ch1_fader_out;
+#X obj 250 308 s ch1_fader_in;
+#X obj 250 328 s ch2_fader_in;
+#X obj 250 348 s ST1_fader_in;
+#X obj 250 368 s ST2_fader_in;
+#X obj 250 388 s master_fader_in;
+#X obj 250 408 s cue_fader_in;
+#X obj 250 169 s ch1_gain_in;
+#X obj 250 149 s ch2_gain_in;
+#X obj -17 6 comment 425 24 courier empty 0 0 0 0 0 255 255 255 0 0
+You found the [hidden treasure]!;
+#X obj -22 67 comment 390 18 courier empty 0 0 0 0 0 255 255 255 0
+0 v A reset button? Oh boy!;
+#X msg 3 132 0;
+#X msg -5 173 100;
+#X msg 250 117 \; pd dsp 1;
+#X connect 0 0 19 0;
+#X connect 0 0 18 0;
+#X connect 0 0 20 0;
+#X connect 1 0 19 0;
+#X connect 1 0 18 0;
+#X connect 18 0 14 0;
+#X connect 18 0 15 0;
+#X connect 19 0 2 0;
+#X connect 19 0 3 0;
+#X connect 19 0 4 0;
+#X connect 19 0 5 0;
+#X connect 19 0 6 0;
+#X connect 19 0 7 0;
+#X connect 19 0 8 0;
+#X connect 19 0 9 0;
+#X connect 19 0 10 0;
+#X connect 19 0 11 0;
+#X connect 19 0 12 0;
+#X connect 19 0 13 0;
+#X restore 384 -40 pd Init;
+#N canvas 245 555 473 410 GUI 0;
+#X obj -128 30 select 1 0;
+#X msg -128 82 color 16;
+#X obj -37 29 select 1 0;
+#X msg -37 81 color 16;
+#X msg -9 55 color 14;
+#X obj 58 30 select 1 0;
+#X msg 58 82 color 16;
+#X msg 86 56 color 14;
+#X obj 153 29 select 1 0;
+#X msg 153 81 color 16;
+#X msg 181 55 color 14;
+#X msg -100 56 color 14;
+#X obj -130 164 select 1 0;
+#X msg -130 216 color 16;
+#X msg -102 190 color 14;
+#X obj -10 164 select 1 0;
+#X msg -10 216 color 16;
+#X msg 18 190 color 14;
+#X obj 153 159 select 1 0;
+#X msg 153 251 color 16 16 22;
+#X msg 181 205 color 13 22;
+#X obj 181 183 delay 1000;
+#X obj 153 229 delay 1000;
+#X obj 153 134 r talk_btn_out;
+#X obj 153 281 s talk_btn_in;
+#X obj -128 5 r ch1_mute_out;
+#X obj -37 4 r ch2_mute_out;
+#X obj 153 4 r ST2_mute_out;
+#X obj 58 5 r ST1_mute_out;
+#X obj -130 139 r master_mute_out;
+#X obj -10 139 r cue_mute_out;
+#X obj -128 112 s ch1_mute_in;
+#X obj -37 111 s ch2_mute_in;
+#X obj 58 112 s ST1_mute_in;
+#X obj 153 111 s ST2_mute_in;
+#X obj -10 246 s cue_mute_in;
+#X obj -130 246 s master_mute_in;
+#X obj -180 268 comment 278 40 courier empty 0 0 0 0 0 255 255 255
+0 0 Look at all the pretty colors...;
+#X connect 0 0 1 0;
+#X connect 0 1 11 0;
+#X connect 1 0 31 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 32 0;
+#X connect 4 0 32 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 33 0;
+#X connect 7 0 33 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 34 0;
+#X connect 10 0 34 0;
+#X connect 11 0 31 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 13 0 36 0;
+#X connect 14 0 36 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 16 0 35 0;
+#X connect 17 0 35 0;
+#X connect 18 0 22 0;
+#X connect 18 1 21 0;
+#X connect 19 0 24 0;
+#X connect 20 0 24 0;
+#X connect 21 0 20 0;
+#X connect 22 0 19 0;
+#X connect 23 0 18 0;
+#X connect 25 0 0 0;
+#X connect 26 0 2 0;
+#X connect 27 0 8 0;
+#X connect 28 0 5 0;
+#X connect 29 0 12 0;
+#X connect 30 0 15 0;
+#X restore 390 -21 pd GUI;
+#N canvas 688 39 570 567 talk 0;
+#X obj 101 15 select 1 0;
+#X obj 101 86 t b b;
+#X obj 107 237 f;
+#X obj 118 377 line;
+#X obj 107 166 once;
+#X obj 107 136 f;
+#X obj 107 193 t b f;
+#X msg 139 331 2500;
+#X obj 107 294 t b b f b;
+#X msg 107 332 80;
+#X msg 178 331 0;
+#X obj 245 88 t b b;
+#X obj 251 239 f;
+#X obj 262 379 line;
+#X obj 251 168 once;
+#X obj 251 138 f;
+#X obj 251 195 t b f;
+#X obj 251 296 t b b f b;
+#X msg 322 333 0;
+#X msg 283 333 1000;
+#X obj 249 333 f;
+#X obj 381 35 delay 1000;
+#X msg 8 115 1;
+#X msg 381 63 0;
+#X obj 8 86 delay 1000;
+#X obj 101 -10 r talk_btn_out;
+#X obj 381 92 s ch1_mute_in;
+#X obj 118 402 s ST1_fader_in;
+#X obj 262 402 s ST1_fader_in;
+#X obj 122 111 r ST1_fader_out;
+#X obj 266 113 r ST1_fader_out;
+#X obj 8 144 s ch1_mute_in;
+#X obj 312 194 comment 175 11 courier empty 0 0 0 0 0 255 255 255 0
+0 That sure is a lot of crap for a simple fadeout toggle. Hell \, it's
+not even a crossfade!;
+#X obj 358 273 comment 162 11 courier empty 0 0 0 0 0 255 255 255 0
+0 this side has no level to set because it automagically remembers
+where you set the ST1 input when you pressed the talk button. Magic!
+;
+#X obj 4 432 comment 425 11 courier empty 0 0 0 0 0 255 255 255 0 0
+That big number is the duration of the fade \, in ms.;
+#X obj 10 467 comment 425 11 courier empty 0 0 0 0 0 255 255 255 0
+0 The smaller number is the target level for the fade where 100=unity
+;
+#X obj 24 452 comment 425 11 courier empty 0 0 0 0 0 255 255 255 0
+0 The zeros are very important \, do not change them.;
+#X obj 89 318 comment 425 11 courier empty 0 0 0 0 0 255 255 255 0
+0 level;
+#X obj 144 318 comment 425 11 courier empty 0 0 0 0 0 255 255 255 0
+0 dur;
+#X obj 289 318 comment 25 11 courier empty 0 0 0 0 0 255 255 255 0
+0 dur;
+#X connect 0 0 1 0;
+#X connect 0 0 24 0;
+#X connect 0 1 11 0;
+#X connect 0 1 21 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 1;
+#X connect 2 0 8 0;
+#X connect 2 0 20 1;
+#X connect 3 0 27 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 0;
+#X connect 6 1 2 1;
+#X connect 7 0 3 1;
+#X connect 8 0 9 0;
+#X connect 8 1 7 0;
+#X connect 8 2 3 0;
+#X connect 8 3 10 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 1;
+#X connect 11 0 15 0;
+#X connect 11 1 14 1;
+#X connect 12 0 17 0;
+#X connect 13 0 28 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 16 1 12 1;
+#X connect 17 0 20 0;
+#X connect 17 1 19 0;
+#X connect 17 2 13 0;
+#X connect 17 3 18 0;
+#X connect 18 0 13 1;
+#X connect 19 0 13 1;
+#X connect 20 0 13 0;
+#X connect 21 0 23 0;
+#X connect 22 0 31 0;
+#X connect 23 0 26 0;
+#X connect 24 0 22 0;
+#X connect 25 0 0 0;
+#X connect 29 0 5 1;
+#X connect 30 0 15 1;
+#X restore 384 -2 pd talk;
+#N canvas 819 127 814 649 Stream 0;
+#X obj 648 358 mp3cast~;
+#X msg 658 76 shoutcast;
+#X msg 658 46 mpeg 44100 128 1 2;
+#X msg 658 104 isPublic 0;
+#X obj 658 18 loadbang;
+#X obj 50 -48 r server_out;
+#X obj 62 -22 r port_out;
+#X obj 314 19 r password_out;
+#X obj 210 -7 r genre_out;
+#X obj 371 -187 r connect_out;
+#X obj 434 54 r url_out;
+#X obj 371 -157 select 1 0;
+#X obj 621 -84 t b b;
+#X msg 648 -40 disconnect;
+#X obj 648 308 receive~ Master-L;
+#X obj 693 328 receive~ Master-R;
+#X msg 17 164 connect \$1 \$2;
+#X obj 17 20 symbol;
+#X obj 17 49 pack s f;
+#X obj 526 134 r name_out;
+#X obj 493 153 symbol;
+#X obj 141 11 symbol other;
+#X msg 141 191 genre \$1;
+#X msg 239 208 passwd \$1;
+#X obj 239 52 symbol hackme;
+#X obj 401 89 symbol;
+#X msg 401 241 url \$1;
+#X msg 493 266 name \$1;
+#X obj 371 -69 t b b b b b b;
+#X obj 542 80 s dong_updater;
+#X obj 648 391 s encoder_status;
+#X msg 460 -40 1;
+#X msg 621 -40 0;
+#X obj 542 47 &&;
+#X obj 557 4 r autosong_out;
+#X obj 636 423 print stream;
+#X connect 0 0 30 0;
+#X connect 0 0 35 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 17 1;
+#X connect 6 0 18 1;
+#X connect 7 0 24 1;
+#X connect 8 0 21 1;
+#X connect 9 0 11 0;
+#X connect 10 0 25 1;
+#X connect 11 0 28 0;
+#X connect 11 1 12 0;
+#X connect 12 0 32 0;
+#X connect 12 1 13 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 1;
+#X connect 16 0 0 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 1;
+#X connect 20 0 27 0;
+#X connect 21 0 22 0;
+#X connect 22 0 0 0;
+#X connect 23 0 0 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 0 0;
+#X connect 27 0 0 0;
+#X connect 28 0 17 0;
+#X connect 28 1 21 0;
+#X connect 28 2 24 0;
+#X connect 28 3 25 0;
+#X connect 28 4 20 0;
+#X connect 28 5 31 0;
+#X connect 31 0 33 0;
+#X connect 32 0 33 0;
+#X connect 33 0 29 0;
+#X connect 34 0 33 1;
+#X restore 372 17 pd Stream;
+#X obj 21 48 send~ ST1-L;
+#X obj 39 28 send~ ST1-R;
+#X obj 58 8 send~ ST2-L;
+#X obj 77 -12 send~ ST2-R;
+#X obj -16 88 send~ CH1;
+#X obj 2 68 send~ CH2;
+#X obj -16 -40 adc~ 1 2 3 4 5 6;
+#N canvas 645 23 684 302 VUmeters 0;
+#X obj 249 24 receive~ ST1-L;
+#X obj 341 24 receive~ ST1-R;
+#X obj 434 24 receive~ ST2-L;
+#X obj 527 24 receive~ ST2-R;
+#X obj 48 81 s vu1;
+#X obj 149 81 s vu2;
+#X obj 249 81 s vu3;
+#X obj 341 81 s vu4;
+#X obj 434 81 s vu5;
+#X obj 527 81 s vu6;
+#X obj 149 24 receive~ CH2-VU;
+#X obj 48 24 receive~ CH1-VU;
+#X obj 48 211 s vu7;
+#X obj 159 211 s vu8;
+#X obj 48 154 receive~ Master-L;
+#X obj 159 154 receive~ Master-R;
+#X obj 527 43 env~;
+#X obj 527 62 - 96;
+#X obj 434 43 env~;
+#X obj 434 62 - 96;
+#X obj 341 43 env~;
+#X obj 341 62 - 96;
+#X obj 249 43 env~;
+#X obj 249 62 - 96;
+#X obj 149 43 env~;
+#X obj 149 62 - 96;
+#X obj 48 43 env~;
+#X obj 48 62 - 96;
+#X obj 48 173 env~;
+#X obj 48 192 - 96;
+#X obj 159 173 env~;
+#X obj 159 192 - 96;
+#X obj 47 264 comment 425 22 courier empty 0 0 0 0 0 255 255 255 0
+0 so simple it almost doesn't need documentation;
+#X connect 0 0 22 0;
+#X connect 1 0 20 0;
+#X connect 2 0 18 0;
+#X connect 3 0 16 0;
+#X connect 10 0 24 0;
+#X connect 11 0 26 0;
+#X connect 14 0 28 0;
+#X connect 15 0 30 0;
+#X connect 16 0 17 0;
+#X connect 17 0 9 0;
+#X connect 18 0 19 0;
+#X connect 19 0 8 0;
+#X connect 20 0 21 0;
+#X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 6 0;
+#X connect 24 0 25 0;
+#X connect 25 0 5 0;
+#X connect 26 0 27 0;
+#X connect 27 0 4 0;
+#X connect 28 0 29 0;
+#X connect 29 0 12 0;
+#X connect 30 0 31 0;
+#X connect 31 0 13 0;
+#X restore 360 36 pd VUmeters;
+#X obj 320 239 dac~;
+#X obj 320 192 receive~ CUE-L;
+#X obj 341 212 receive~ CUE-R;
+#N canvas 99 367 628 592 mixer 0;
+#X obj -76 -2 receive~ CH1;
+#X obj 37 -2 receive~ CH2;
+#X obj 139 -2 receive~ ST1-L;
+#X obj 231 -2 receive~ ST1-R;
+#X obj 37 78 *~;
+#X obj 52 102 send~ CH2-VU;
+#X obj 37 164 *~;
+#X obj 37 261 *~;
+#X obj -76 78 *~;
+#X obj -76 164 *~;
+#X obj -76 261 *~;
+#X obj -61 102 send~ CH1-VU;
+#X obj 139 164 *~;
+#X obj 231 164 *~;
+#X obj 139 261 *~;
+#X obj 231 261 *~;
+#X obj 329 164 *~;
+#X obj 421 164 *~;
+#X obj 329 261 *~;
+#X obj 421 261 *~;
+#X obj 329 -2 receive~ ST2-L;
+#X obj 421 -2 receive~ ST2-R;
+#X obj 22 286 +~;
+#X obj 124 314 +~;
+#X obj 216 314 +~;
+#X obj 314 344 +~;
+#X obj 406 344 +~;
+#X obj 314 507 send~ Master-L;
+#X obj 406 507 send~ Master-R;
+#X obj 314 387 *~;
+#X obj 406 387 *~;
+#X obj 314 486 *~;
+#X obj 406 486 *~;
+#X obj 126 403 *~;
+#X obj 207 403 *~;
+#X obj 126 493 *~;
+#X obj 207 493 *~;
+#X obj 126 523 send~ CUE-L;
+#X obj 207 523 send~ CUE-R;
+#X obj 222 444 dbtorms;
+#X obj 222 468 - 0.008;
+#X obj 52 209 dbtorms;
+#X obj 52 233 - 0.008;
+#X obj -61 209 dbtorms;
+#X obj -61 233 - 0.008;
+#X obj 246 209 dbtorms;
+#X obj 246 233 - 0.008;
+#X obj 436 209 dbtorms;
+#X obj 436 233 - 0.008;
+#X obj 421 430 dbtorms;
+#X obj 421 454 - 0.008;
+#X obj -61 18 r ch1_gain_out;
+#X obj 52 18 r ch2_gain_out;
+#X obj -61 141 r ch1_mute_out;
+#X obj 52 141 r ch2_mute_out;
+#X obj 246 141 r ST1_mute_out;
+#X obj 436 141 r ST2_mute_out;
+#X obj -61 187 r ch1_fader_out;
+#X obj 52 187 r ch2_fader_out;
+#X obj 246 187 r ST1_fader_out;
+#X obj 436 187 r ST2_fader_out;
+#X obj 421 364 r master_mute_out;
+#X obj 222 383 r cue_mute_out;
+#X obj 222 423 r cue_fader_out;
+#X obj 421 407 r master_fader_out;
+#X obj -61 38 + 100;
+#X obj 52 38 + 100;
+#X obj 52 58 dbtorms;
+#X obj -61 58 dbtorms;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 2 0 12 0;
+#X connect 3 0 13 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 22 1;
+#X connect 8 0 9 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 22 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 23 1;
+#X connect 15 0 24 1;
+#X connect 16 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 25 1;
+#X connect 19 0 26 1;
+#X connect 20 0 16 0;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 22 0 24 0;
+#X connect 23 0 25 0;
+#X connect 24 0 26 0;
+#X connect 25 0 29 0;
+#X connect 25 0 33 0;
+#X connect 26 0 30 0;
+#X connect 26 0 34 0;
+#X connect 29 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 27 0;
+#X connect 32 0 28 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 0;
+#X connect 35 0 37 0;
+#X connect 36 0 38 0;
+#X connect 39 0 40 0;
+#X connect 40 0 36 1;
+#X connect 40 0 35 1;
+#X connect 41 0 42 0;
+#X connect 42 0 7 1;
+#X connect 43 0 44 0;
+#X connect 44 0 10 1;
+#X connect 45 0 46 0;
+#X connect 46 0 15 1;
+#X connect 46 0 14 1;
+#X connect 47 0 48 0;
+#X connect 48 0 19 1;
+#X connect 48 0 18 1;
+#X connect 49 0 50 0;
+#X connect 50 0 32 1;
+#X connect 50 0 31 1;
+#X connect 51 0 65 0;
+#X connect 52 0 66 0;
+#X connect 53 0 9 1;
+#X connect 54 0 6 1;
+#X connect 55 0 13 1;
+#X connect 55 0 12 1;
+#X connect 56 0 17 1;
+#X connect 56 0 16 1;
+#X connect 57 0 43 0;
+#X connect 58 0 41 0;
+#X connect 59 0 45 0;
+#X connect 60 0 47 0;
+#X connect 61 0 30 1;
+#X connect 61 0 29 1;
+#X connect 62 0 34 1;
+#X connect 62 0 33 1;
+#X connect 63 0 39 0;
+#X connect 64 0 49 0;
+#X connect 65 0 68 0;
+#X connect 66 0 67 0;
+#X connect 67 0 4 1;
+#X connect 68 0 8 1;
+#X restore 378 55 pd mixer;
+#N canvas 459 156 908 796 fileOperations 1;
+#X obj 4 77 openpanel;
+#X obj 218 75 openpanel;
+#X obj 4 20 select 1;
+#X obj 4 96 s autopath_in;
+#X obj 218 -1 r load_out;
+#X obj 218 18 select 1;
+#X obj 244 56 s load_in;
+#X obj 27 39 delay 250;
+#X obj 244 37 delay 250;
+#X obj 543 170 select 1;
+#X obj 569 189 delay 250;
+#X obj 543 151 r save_out;
+#X obj 543 227 savepanel;
+#X obj 569 208 s save_in;
+#X obj 4 1 r autosong_browse_out;
+#X obj 27 58 s autosong_browse_in;
+#X obj 417 -1 r server_out;
+#X obj 480 75 r genre_out;
+#X obj 449 37 r password_out;
+#X obj 496 94 r url_out;
+#X obj 464 56 r name_out;
+#X obj 511 113 r autosong_out;
+#X obj 433 18 r port_out;
+#X obj 527 132 r autopath_out;
+#X obj 402 265 pack s s f s s s s f s s;
+#X obj 402 246 getdir;
+#X obj 402 227 r do_save;
+#X obj 569 265 s do_save;
+#X msg 569 246 bang;
+#X obj 173 138 getdir;
+#X obj 13 295 s server_in;
+#X obj 173 710 s port_in;
+#X obj 257 217 s password_in;
+#X obj 13 276 popen;
+#X obj 173 653 popen;
+#X obj 257 198 popen;
+#X obj 234 264 popen;
+#X obj 234 283 s name_in;
+#X obj 188 586 popen;
+#X obj 205 483 popen;
+#X obj 232 408 popen;
+#X obj 231 330 popen;
+#X obj 231 349 s genre_in;
+#X obj 188 605 s url_in;
+#X obj 205 540 s autosong_in;
+#X obj 232 427 s autopath_in;
+#X obj 402 349 print;
+#X obj 402 316 popen;
+#X msg 402 284 perl "\$1/save.pl" -h \$2 -p \$3 -P \$4 -n "\$5" -g
+"\$6" -l "\$7" -u \$8 -U "\$9" "\$10";
+#X obj 173 100 bang;
+#X obj 173 157 pack s s;
+#X obj 173 672 s2l;
+#X obj 173 691 unpack f;
+#X obj 205 502 s2l;
+#X obj 205 521 unpack f;
+#X msg 257 179 perl "\$1/load.pl" -P "\$2";
+#X msg 234 245 perl "\$1/load.pl" -n "\$2";
+#X msg 231 311 perl "\$1/load.pl" -g "\$2";
+#X msg 232 389 perl "\$1/load.pl" -U "\$2";
+#X msg 205 464 perl "\$1/load.pl" -u "\$2";
+#X msg 188 567 perl "\$1/load.pl" -l "\$2";
+#X msg 173 634 perl "\$1/load.pl" -p "\$2";
+#X msg 13 257 perl "\$1/load.pl" -h "\$2";
+#X obj 173 119 delay 250;
+#X obj 331 81 l2s;
+#X obj 331 43 getdir;
+#X obj 331 24 loadbang;
+#X msg 331 62 \$1/vapor.ini;
+#X connect 0 0 3 0;
+#X connect 1 0 49 0;
+#X connect 1 0 50 1;
+#X connect 2 0 0 0;
+#X connect 2 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 0 8 0;
+#X connect 7 0 15 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 13 0;
+#X connect 11 0 9 0;
+#X connect 12 0 24 9;
+#X connect 12 0 28 0;
+#X connect 14 0 2 0;
+#X connect 16 0 24 1;
+#X connect 17 0 24 5;
+#X connect 18 0 24 3;
+#X connect 19 0 24 6;
+#X connect 20 0 24 4;
+#X connect 21 0 24 7;
+#X connect 22 0 24 2;
+#X connect 23 0 24 8;
+#X connect 24 0 48 0;
+#X connect 25 0 24 0;
+#X connect 26 0 25 0;
+#X connect 28 0 27 0;
+#X connect 29 0 50 0;
+#X connect 33 0 30 0;
+#X connect 34 0 51 0;
+#X connect 35 0 32 0;
+#X connect 36 0 37 0;
+#X connect 38 0 43 0;
+#X connect 39 0 53 0;
+#X connect 40 0 45 0;
+#X connect 41 0 42 0;
+#X connect 47 0 46 0;
+#X connect 48 0 47 0;
+#X connect 49 0 63 0;
+#X connect 50 0 62 0;
+#X connect 50 0 61 0;
+#X connect 50 0 55 0;
+#X connect 50 0 56 0;
+#X connect 50 0 57 0;
+#X connect 50 0 60 0;
+#X connect 50 0 58 0;
+#X connect 50 0 59 0;
+#X connect 51 0 52 0;
+#X connect 52 0 31 0;
+#X connect 53 0 54 0;
+#X connect 54 0 44 0;
+#X connect 55 0 35 0;
+#X connect 56 0 36 0;
+#X connect 57 0 41 0;
+#X connect 58 0 40 0;
+#X connect 59 0 39 0;
+#X connect 60 0 38 0;
+#X connect 61 0 34 0;
+#X connect 62 0 33 0;
+#X connect 63 0 29 0;
+#X connect 64 0 50 1;
+#X connect 64 0 49 0;
+#X connect 65 0 67 0;
+#X connect 66 0 65 0;
+#X connect 67 0 64 0;
+#X restore 324 74 pd fileOperations;
+#X obj -8 122 comment 425 48 courier empty 0 0 0 0 0 255 255 255 0
+0 Fly away \, nerd!;
+#N canvas 620 351 458 264 dongUpdater 0;
+#X msg 29 -18 stop;
+#X obj 1 -37 select 1 0;
+#X obj 1 -56 r dong_updater;
+#X obj 21 39 r server_out;
+#X obj 41 58 r port_out;
+#X obj 61 77 r password_out;
+#X obj 82 96 r autopath_out;
+#X obj 1 153 popen;
+#X obj 1 172 print;
+#X obj 1 115 pack s s f s s;
+#X obj 1 20 getdir;
+#X obj 1 1 metro 10000;
+#X obj 297 117 getdir;
+#X msg 1 134 perl "\$1/updater.pl" -h \$2 -p \$3 -P \$4 -f "\$5";
+#X msg 297 136 perl "\$1/updater.pl" -x;
+#X connect 0 0 11 0;
+#X connect 1 0 11 0;
+#X connect 1 1 0 0;
+#X connect 1 1 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 9 1;
+#X connect 4 0 9 2;
+#X connect 5 0 9 3;
+#X connect 6 0 9 4;
+#X connect 7 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 14 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 0;
+#X restore 342 93 pd dongUpdater;
+#X text 351 228 vaporWaves;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
+#X connect 10 2 4 0;
+#X connect 10 3 5 0;
+#X connect 10 4 6 0;
+#X connect 10 5 7 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 1;
+#X restore 558 675 pd a;
+#X obj 264 335 tgl 32 0 master_mute_out master_mute_in empty 17 7 0
+10 #fcac44 #00fc04 #fcfcfc 0 1;
+#X obj 321 335 tgl 32 0 cue_mute_out cue_mute_in empty 17 7 0 10 #fcac44
+#00fc04 #fcfcfc 0 1;
+#X obj 248 168 cnv 15 120 150 empty empty empty 20 12 0 14 #141414
+#404040 0;
+#X obj 275 173 vu 30 120 vu7 empty -1 -8 0 10 #141414 #000000 0 0;
+#X obj 312 173 vu 30 120 vu8 empty -1 -8 0 10 #141414 #000000 0 0;
+#X obj 347 228 comment 425 22 helvetica empty 0 255 255 255 0 255 255
+255 0 0 R;
+#X obj 254 228 comment 425 22 helvetica empty 0 255 255 255 0 255 255
+255 0 0 L;
+#X obj 69 236 vu 30 80 vu1 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 105 236 vu 30 80 vu2 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 141 236 vu 14 80 vu3 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 157 236 vu 14 80 vu4 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 177 236 vu 14 80 vu5 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 193 236 vu 14 80 vu6 empty -1 -8 0 10 #202020 #000000 0 0;
+#X obj 256 295 comment 425 22 helvetica empty 0 255 255 255 0 255 255
+255 0 0 master out;
+#X obj 74 340 tgl 20 0 ch1_mute_out ch1_mute_in empty 17 7 0 10 #fcac44
+#00fc04 #fcfcfc 0 1;
+#X obj 110 340 tgl 20 0 ch2_mute_out ch2_mute_in empty 17 7 0 10 #fcac44
+#00fc04 #fcfcfc 0 1;
+#X obj 146 340 tgl 20 0 ST1_mute_out ST1_mute_in empty 17 7 0 10 #fcac44
+#00fc04 #fcfcfc 0 1;
+#X obj 182 340 tgl 20 0 ST2_mute_out ST2_mute_in empty 17 7 0 10 #fcac44
+#00fc04 #fcfcfc 0 1;
+#X obj 389 440 tgl 150 0 talk_btn_out talk_btn_in talk 76 138 1 44
+#fc2828 #14e814 #000000 0 1;
+#X text 54 189 comment;
+#X obj 18 194 comment 425 11 helvetica empty 0 0 255 255 0 255 255
+255 0 0 mic gain;
+#X obj 71 650 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 mic 1;
+#X obj 106 650 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 mic 2;
+#X obj 140 650 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 stereo;
+#X obj 176 650 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 stereo;
+#X obj 419 40 cnv 15 175 125 empty empty empty 20 12 0 14 #14c8fc #404040
+0;
+#N canvas 1229 719 505 303 configuration 0;
+#X obj 3 0 cnv 15 500 300 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 13 11 cnv 15 480 280 empty empty empty 20 12 0 14 #14c8fc #404040
+0;
+#X obj 14 13 comment 425 22 helvetica empty 0 255 255 255 0 255 255
+255 0 0 configuration menu;
+#X obj 15 14 comment 425 22 helvetica empty 0 0 0 0 0 255 255 255 0
+0 configuration menu;
+#X obj 56 43 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255 0
+0 server;
+#X obj 73 61 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255 0
+0 port;
+#X obj 34 79 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255 0
+0 password;
+#X symbolatom 101 44 22 0 0 0 - server_in server_out 0;
+#X symbolatom 101 79 22 0 0 0 - password_in password_out 0;
+#X symbolatom 101 133 22 0 0 0 - genre_in genre_out 0;
+#X symbolatom 101 151 22 0 0 0 - url_in url_out 0;
+#X obj 61 133 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255
+0 0 genre;
+#X obj 81 152 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255
+0 0 url;
+#X obj 13 115 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255
+0 0 stream name;
+#X symbolatom 101 115 22 0 0 0 - name_in name_out 0;
+#X obj 262 38 cnv 15 204 144 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 264 40 cnv 15 200 140 empty empty empty 20 12 0 14 #00f8fc #404040
+0;
+#X obj 287 42 comment 425 15 Helvetica empty 0 0 0 0 0 255 255 255
+0 0 enable song title updating;
+#X obj 266 43 tgl 15 0 autosong_out autosong_in empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 289 83 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255
+0 0 path to song title file;
+#X symbolatom 272 104 30 0 0 0 - autopath_in autopath_out 0;
+#X obj 423 223 tgl 65 0 save_out save_in save 31 58 1 15 #c4fcc4 #000000
+#000000 0 1;
+#X obj 353 223 tgl 65 0 load_out load_in load 35 58 1 15 #c4fcfc #000000
+#000000 0 1;
+#X obj 15 229 comment 425 66 helvetica empty 0 255 0 255 0 255 255
+255 0 0 SETTINGS;
+#X obj 19 233 comment 425 66 helvetica empty 0 0 255 255 0 255 255
+255 0 0 SETTINGS;
+#X obj 17 231 comment 425 66 helvetica empty 0 255 255 255 0 255 255
+255 0 0 SETTINGS;
+#X obj 101 62 nbx 6 14 0 65535 0 0 port_out port_in empty 0 -8 0 10
+#dcdcdc #000000 #000000 0 256;
+#X obj 439 124 tgl 15 0 autosong_browse_out autosong_browse_in empty
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 386 123 comment 425 15 helvetica empty 0 0 0 0 0 255 255 255
+0 0 browse;
+#X coords 0 0 1 1 150 75 0;
+#X restore 422 43 pd configuration;
+#X obj 526 43 tgl 65 0 connect_out connect_in connect 11 59 1 15 #c4fcc4
+#000000 #000000 0 1;
+#X obj 63 447 cnv 1 150 2 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 388 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 418 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 477 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 505 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 544 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 592 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 63 640 cnv 1 150 1 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 69 389 vsl 30 256 59 112 0 0 ch1_fader_out ch1_fader_in empty
+0 -9 0 10 #7c7c7c #000000 #000000 0 0;
+#X obj 105 389 vsl 30 256 59 112 0 0 ch2_fader_out ch2_fader_in empty
+0 -9 0 10 #7c7c7c #000000 #000000 0 0;
+#X obj 141 389 vsl 30 256 59 112 0 0 ST1_fader_out ST1_fader_in empty
+0 -9 0 10 #7c7c7c #000000 #000000 0 0;
+#X obj 177 389 vsl 30 256 59 112 0 0 ST2_fader_out ST2_fader_in empty
+0 -9 0 10 #7c7c7c #000000 #000000 0 0;
+#X obj 48 412 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 +6;
+#X obj 42 385 comment 425 11 helvetica empty 0 255 255 255 0 255 255
+255 0 0 +12;
+#X obj 253 447 cnv 1 110 2 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 388 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 418 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 477 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 505 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 544 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 592 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 253 640 cnv 1 110 1 empty empty empty 20 12 0 14 #543410 #404040
+0;
+#X obj 265 389 vsl 30 256 59 112 0 0 master_fader_out master_fader_in
+empty 0 -9 0 10 #fc8000 #404040 #000000 0 0;
+#X obj 322 389 vsl 30 256 59 112 0 0 cue_fader_out cue_fader_in empty
+0 -9 0 10 #fc8000 #404040 #000000 0 0;
+#N canvas 523 607 505 303 encoder 0;
+#X obj 3 0 cnv 15 500 300 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 13 11 cnv 15 480 280 empty empty empty 20 12 0 14 #14c8fc #404040
+0;
+#X obj 14 13 comment 425 22 helvetica empty 0 255 255 255 0 255 255
+255 0 0 encoder setup menu;
+#X obj 15 14 comment 425 22 helvetica empty 0 0 0 0 0 255 255 255 0
+0 encoder setup menu;
+#X obj 15 223 comment 425 66 helvetica empty 0 255 0 255 0 255 255
+255 0 0 HAHAHA NO.;
+#X obj 19 227 comment 425 66 helvetica empty 0 0 255 255 0 255 255
+255 0 0 HAHAHA NO.;
+#X obj 17 225 comment 425 66 helvetica empty 0 255 255 255 0 255 255
+255 0 0 HAHAHA NO.;
+#X coords 0 0 1 1 150 75 0;
+#X restore 422 63 pd encoder setup;
+#X obj 823 320 moonlib/mknob 25 100 0 127 0 0 empty empty empty -2
+-6 0 8 1.53964e+07 0 1.53961e+07 0 1;
+#X obj 104 185 moonlib/mknob 32 32 -10 40 0 0 ch2_gain_out ch2_gain_in
+empty 0 -8 0 8 1.53964e+07 0 1.53961e+07 620 1;
+#X obj 68 185 moonlib/mknob 32 32 -10 40 0 0 ch1_gain_out ch1_gain_in
+empty 0 -8 0 8 1.53964e+07 0 1.53961e+07 620 1;
