@@ -13,7 +13,7 @@ $pass = $opts{'P'};
 
 $file = $opts{'f'};
 
-$tempfile = "/tmp/gstreemr_songname";
+$tempfile = "/tmp/vwave_songname";
 
 if ($opts{'x'}) {
 	unlink $tempfile or warn "can't unlink $tempfile: $!\n";
@@ -46,7 +46,7 @@ unless ($oldname eq $songname) {
 	$request_uri = "http://" . uri_escape($host) . ":" . uri_escape($port) . "/admin.cgi?pass=" . uri_escape($pass) . "&mode=updinfo&song=" . uri_escape($songname, "^A-Za-z0-9");
 
 	$ua = LWP::UserAgent->new;
-	$ua->agent('Mozilla/5.0 (compatible; ghettoStreemer) ' .  $ua->agent);
+	$ua->agent('Mozilla/5.0 (compatible; vaporWaves streaming platform) ' .  $ua->agent);
 
 	$ua->get($request_uri);
 }
